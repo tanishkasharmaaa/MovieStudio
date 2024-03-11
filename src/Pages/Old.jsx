@@ -72,7 +72,7 @@ export function TopRates() {
           <div className="popular-item" key={ele.id}>
             <div className="movie_image"><img src={`https://image.tmdb.org/t/p/w500${ele.poster_path}`} alt="" /></div>
             <div>
-              <p>{ele.original_title ? ele.original_title : ele.title}</p>
+            <p>{ele.title ? ele.title : ele.original_title}</p>
               <p>{ele.first_air_date ? ele.first_air_date : ele.release_date}</p>
             </div>
           </div>

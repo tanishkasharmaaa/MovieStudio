@@ -3,7 +3,7 @@ import { Navbar } from '../components/Navbar';
 import { debounce } from "lodash";
 import Footer from '../components/footer';
 
-export function Upcoming() {
+export function Popular() {
   const [movie, setMovie] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
@@ -11,7 +11,7 @@ export function Upcoming() {
 
   const fetchMovie = async (page, query) => {
     try {
-      let url = `https://api.themoviedb.org/3/movie/upcoming?api_key=27b5d25206cf016f63ac2c007776afaf&language=en-US&page=${page}`;
+      let url = `https://api.themoviedb.org/3/movie/popular?api_key=27b5d25206cf016f63ac2c007776afaf&language=en-US&page=${page}`;
       
       if (query) {
         url = `https://api.themoviedb.org/3/search/movie?api_key=27b5d25206cf016f63ac2c007776afaf&language=en-US&page=${page}&query=${query}`;
@@ -72,7 +72,7 @@ export function Upcoming() {
           <div className="popular-item" key={ele.id}>
             <div className="movie_image"><img src={`https://image.tmdb.org/t/p/w500${ele.poster_path}`} alt="" /></div>
             <div>
-              <p>{ele.original_title ? ele.original_title : ele.title}</p>
+              <p>{ele.title ? ele.title : ele.original_title}</p>
               <p>{ele.first_air_date ? ele.first_air_date : ele.release_date}</p>
             </div>
           </div>
