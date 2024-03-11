@@ -8,8 +8,8 @@ function MainCarousel() {
 
   const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 1200, min: 700 },
-      items: 4,
+      breakpoint: { max: 1300, min: 700 },
+      items: 5,
     },
     desktop: {
       breakpoint: { max: 700, min: 500 },
@@ -28,7 +28,7 @@ function MainCarousel() {
   const fetchData = async () => {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=27b5d25206cf016f63ac2c007776afaf`
+        `https://api.themoviedb.org/3/discover/tv?api_key=27b5d25206cf016f63ac2c007776afaf`
       );
       const data = await res.json();
       const final = data.results;

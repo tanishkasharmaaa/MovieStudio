@@ -11,8 +11,8 @@ function TrailerCarousel() {
 const[newOption,setNewOption]=useState("tv")
   const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 1200, min: 700 },
-      items: 4,
+      breakpoint: { max: 1300, min: 700 },
+      items: 5,
     },
     desktop: {
       breakpoint: { max: 700, min: 500 },
